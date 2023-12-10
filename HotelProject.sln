@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{E65731FE-C2E0-420E-A3B0-9D81352CF629}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConsume", "ApiConsume", "{DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{39566564-A9DA-4F7A-A10F-678FAFEB1603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{085CFDF3-F559-491F-A00E-2F2BAC98FF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtoLayer", "DtoLayer\DtoLayer.csproj", "{E5392DFF-E4D3-4B42-A0E1-4C77765A3206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{623F5DFA-649F-4420-978C-054BCA4B3468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39566564-A9DA-4F7A-A10F-678FAFEB1603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39566564-A9DA-4F7A-A10F-678FAFEB1603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39566564-A9DA-4F7A-A10F-678FAFEB1603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39566564-A9DA-4F7A-A10F-678FAFEB1603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085CFDF3-F559-491F-A00E-2F2BAC98FF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085CFDF3-F559-491F-A00E-2F2BAC98FF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085CFDF3-F559-491F-A00E-2F2BAC98FF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085CFDF3-F559-491F-A00E-2F2BAC98FF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5392DFF-E4D3-4B42-A0E1-4C77765A3206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5392DFF-E4D3-4B42-A0E1-4C77765A3206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5392DFF-E4D3-4B42-A0E1-4C77765A3206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5392DFF-E4D3-4B42-A0E1-4C77765A3206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623F5DFA-649F-4420-978C-054BCA4B3468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623F5DFA-649F-4420-978C-054BCA4B3468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623F5DFA-649F-4420-978C-054BCA4B3468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623F5DFA-649F-4420-978C-054BCA4B3468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{39566564-A9DA-4F7A-A10F-678FAFEB1603} = {DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}
+		{66341EC9-8B65-4ADD-AC1D-9B3D6FA02B59} = {DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}
+		{085CFDF3-F559-491F-A00E-2F2BAC98FF82} = {DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}
+		{5C9D05FE-EFBF-4DDC-AFA1-C346195979F3} = {DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}
+		{E5392DFF-E4D3-4B42-A0E1-4C77765A3206} = {DA9ACB3D-9A6E-45C2-BB64-05F3C49A7EAC}
+		{623F5DFA-649F-4420-978C-054BCA4B3468} = {E65731FE-C2E0-420E-A3B0-9D81352CF629}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {092341B4-5EA0-4581-BFE4-2511AB7D0A51}
+	EndGlobalSection
+EndGlobal
