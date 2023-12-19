@@ -24,18 +24,17 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateRoom(int id)
+        public IActionResult UpdateRoom(Room room)
         {
-            var find = _roomService.TGetId(id);
-            _roomService.TUpdate(find);
+            _roomService.TUpdate(room);
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteRoom(int id)
         {
-            var find = _roomService.TGetId(id);
-            _roomService.TDelete(find);
+            var values = _roomService.TGetId(id);
+            _roomService.TDelete(values);
             return Ok();
         }
 

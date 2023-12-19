@@ -1,0 +1,49 @@
+﻿@model UpdateStaffViewModel
+@{
+    ViewData["Title"] = "EditStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Personel Düzenleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Personel Düzenleme Paneli</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <br />
+                            <label>Personel Adı Soyadı</label>
+                            <input type="text" asp-for="Name" class="form-control">
+                            <br />
+                            <label>Personel Ünvanı</label>
+                            <input type="text" asp-for="Title" class="form-control">
+                            <br />
+                            <label>Sosyal Medya 1</label>
+                            <input type="text" asp-for="SocialMedia1" class="form-control">
+                            <br />
+                            <label>Sosyal Medya 2</label>
+                            <input type="text" asp-for="SocialMedia2" class="form-control">
+                            <br />
+                            <label>Sosyal Medya 3</label>
+                            <input type="text" asp-for="SocialMedia3" class="form-control">
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Güncelle</button>
+                            <a class="btn btn-outline-dark" href="/Staff/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

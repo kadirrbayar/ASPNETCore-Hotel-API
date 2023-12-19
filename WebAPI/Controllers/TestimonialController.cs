@@ -24,18 +24,17 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateTestimonial(int id)
+        public IActionResult UpdateTestimonial(Testimonial testimonial)
         {
-            var find = _testimonialService.TGetId(id);
-            _testimonialService.TUpdate(find);
+            _testimonialService.TUpdate(testimonial);
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
-            var find = _testimonialService.TGetId(id);
-            _testimonialService.TDelete(find);
+            var values = _testimonialService.TGetId(id);
+            _testimonialService.TDelete(values);
             return Ok();
         }
 

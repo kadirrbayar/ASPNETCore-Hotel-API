@@ -24,18 +24,17 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateService(int id)
+        public IActionResult UpdateService(Service service)
         {
-            var find = _serviceService.TGetId(id);
-            _serviceService.TUpdate(find);
+            _serviceService.TUpdate(service);
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id)
         {
-            var find = _serviceService.TGetId(id);
-            _serviceService.TDelete(find);
+            var values = _serviceService.TGetId(id);
+            _serviceService.TDelete(values);
             return Ok();
         }
 

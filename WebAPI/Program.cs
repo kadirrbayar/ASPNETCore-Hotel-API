@@ -28,6 +28,14 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(x =>
+{
+    x.AddPolicy("HotelAPIProject", x =>
+    {
+        x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,7 +46,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("HotelAPIProject");
 app.UseAuthorization();
 
 app.MapControllers();

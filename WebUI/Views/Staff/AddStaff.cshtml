@@ -1,0 +1,48 @@
+﻿@model AddStaffViewModel
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Personel Ekleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Personel Ekleme Paneli</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <br />
+                            <label>Personel Adı Soyadı</label>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Ad Soyad">
+                            <br />
+                            <label>Personel Ünvanı</label>
+                            <input type="text" asp-for="Title" class="form-control" placeholder="Ünvan">
+                            <br />
+                            <label>Sosyal Medya 1</label>
+                            <input type="text" asp-for="SocialMedia1" class="form-control" placeholder="Sosyal Medya 1">
+                            <br />
+                            <label>Sosyal Medya 2</label>
+                            <input type="text" asp-for="SocialMedia2" class="form-control" placeholder="Sosyal Medya 2">
+                            <br />
+                            <label>Sosyal Medya 3</label>
+                            <input type="text" asp-for="SocialMedia3" class="form-control" placeholder="Sosyal Medya 3">
+                            <br />
+                            <button class="btn btn-outline-primary">Ekle</button>
+                            <a class="btn btn-outline-dark" href="/Staff/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
