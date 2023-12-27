@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DtoLayer.Dtos.SubscribeDto;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,23 +12,31 @@ namespace WebAPI.Controllers
     public class SubscribeController : ControllerBase
     {
         private readonly ISubscribeService _subscribeService;
+        private readonly IMapper _mapper;
 
-        public SubscribeController(ISubscribeService subscribeService)
+        public SubscribeController(ISubscribeService subscribeService, IMapper mapper)
         {
             _subscribeService = subscribeService;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult AddSubscribe(Subscribe subscribe)
+        public IActionResult AddSubscribe(CreateSubscribeDto createSubscribe)
         {
-            _subscribeService.TInsert(subscribe);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Subscribe>(createSubscribe);
+            _subscribeService.TInsert(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateSubscribe(Subscribe subscribe)
+        public IActionResult UpdateSubscribe(UpdateSubscribeDto updateSubscribe)
         {
-            _subscribeService.TUpdate(subscribe);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Subscribe>(updateSubscribe);
+            _subscribeService.TUpdate(values);
             return Ok();
         }
 

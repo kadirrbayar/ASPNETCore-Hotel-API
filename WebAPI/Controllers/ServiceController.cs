@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DtoLayer.Dtos.ServiceDto;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,23 +12,31 @@ namespace WebAPI.Controllers
     public class ServiceController : ControllerBase
     {
         private readonly IServiceService _serviceService;
+        private readonly IMapper _mapper;
 
-        public ServiceController(IServiceService serviceService)
+        public ServiceController(IServiceService serviceService, IMapper mapper)
         {
             _serviceService = serviceService;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult AddService(Service service)
+        public IActionResult AddService(CreateServiceDto createService)
         {
-            _serviceService.TInsert(service);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Service>(createService);
+            _serviceService.TInsert(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateService(Service service)
+        public IActionResult UpdateService(UpdateServiceDto updateService)
         {
-            _serviceService.TUpdate(service);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Service>(updateService);
+            _serviceService.TUpdate(values);
             return Ok();
         }
 

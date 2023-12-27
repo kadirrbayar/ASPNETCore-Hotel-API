@@ -1,4 +1,4 @@
-﻿@model AddStaffViewModel
+﻿@model CreateStaffDto
 @{
     ViewData["Title"] = "AddStaff";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -23,18 +23,23 @@
                             <br />
                             <label>Personel Adı Soyadı</label>
                             <input type="text" asp-for="Name" class="form-control" placeholder="Ad Soyad">
+                            <span asp-validation-for="Name" class="text-danger"></span>
                             <br />
                             <label>Personel Ünvanı</label>
                             <input type="text" asp-for="Title" class="form-control" placeholder="Ünvan">
+                            <span asp-validation-for="Title" class="text-danger"></span>
                             <br />
                             <label>Sosyal Medya 1</label>
                             <input type="text" asp-for="SocialMedia1" class="form-control" placeholder="Sosyal Medya 1">
+                            <span asp-validation-for="SocialMedia1" class="text-danger"></span>
                             <br />
                             <label>Sosyal Medya 2</label>
                             <input type="text" asp-for="SocialMedia2" class="form-control" placeholder="Sosyal Medya 2">
+                            <span asp-validation-for="SocialMedia2" class="text-danger"></span>
                             <br />
                             <label>Sosyal Medya 3</label>
                             <input type="text" asp-for="SocialMedia3" class="form-control" placeholder="Sosyal Medya 3">
+                            <span asp-validation-for="SocialMedia3" class="text-danger"></span>
                             <br />
                             <button class="btn btn-outline-primary">Ekle</button>
                             <a class="btn btn-outline-dark" href="/Staff/Index/">İptal</a>

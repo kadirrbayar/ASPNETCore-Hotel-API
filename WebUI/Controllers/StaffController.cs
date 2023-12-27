@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
-using WebUI.Models.Staff;
+using WebUI.Dtos.StaffDto;
 
 namespace WebUI.Controllers
 {
@@ -21,7 +21,7 @@ namespace WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<StaffDto>>(jsonData);
                 return View(values);
             }
             return View();
@@ -34,10 +34,12 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddStaff(AddStaffViewModel addStaffViewModel)
+        public async Task<IActionResult> AddStaff(CreateStaffDto createStaffDto)
         {
+            if (!ModelState.IsValid)
+                return View();
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(addStaffViewModel);
+            var jsonData = JsonConvert.SerializeObject(createStaffDto);
             StringContent content = new(jsonData,Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7233/api/Staff",content);
             if (responseMessage.IsSuccessStatusCode)
@@ -55,17 +57,19 @@ namespace WebUI.Controllers
             if(responseMessage.IsSuccessStatusCode) 
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsonData);
+                var values = JsonConvert.DeserializeObject<UpdateStaffDto>(jsonData);
                 return View(values); 
             }
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditStaff(UpdateStaffViewModel updateStaffViewModel)
+        public async Task<IActionResult> EditStaff(UpdateStaffDto updateStaffDto)
         {
+            if (!ModelState.IsValid)
+                return View();
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(updateStaffViewModel);
+            var jsonData = JsonConvert.SerializeObject(updateStaffDto);
             StringContent content = new(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("https://localhost:7233/api/Staff", content);
             if (responseMessage.IsSuccessStatusCode)

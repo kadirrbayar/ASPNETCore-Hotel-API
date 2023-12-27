@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DtoLayer.Dtos.StaffDto;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,23 +12,31 @@ namespace WebAPI.Controllers
     public class StaffController : ControllerBase
     {
         private readonly IStaffService _staffService;
+        private readonly IMapper _mapper;
 
-        public StaffController(IStaffService staffService)
+        public StaffController(IStaffService staffService, IMapper mapper)
         {
             _staffService = staffService;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult AddStaff(Staff staff)
+        public IActionResult AddStaff(CreateStaffDto createStaff)
         {
-            _staffService.TInsert(staff);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Staff>(createStaff);
+            _staffService.TInsert(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateStaff(Staff staff)
+        public IActionResult UpdateStaff(UpdateStaffDto updateStaff)
         {
-            _staffService.TUpdate(staff);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Staff>(updateStaff);
+            _staffService.TUpdate(values);
             return Ok();
         }
 

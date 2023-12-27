@@ -1,6 +1,6 @@
-﻿namespace WebUI.Models.Staff
+﻿namespace WebUI.Dtos.StaffDto
 {
-    public class UpdateStaffViewModel
+    public class StaffDto
     {
         public int Id { get; set; }
         public string? Name { get; set; }

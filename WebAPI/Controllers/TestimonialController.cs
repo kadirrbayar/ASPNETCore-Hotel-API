@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DtoLayer.Dtos.TestimonialDto;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,23 +12,31 @@ namespace WebAPI.Controllers
     public class TestimonialController : ControllerBase
     {
         private readonly ITestimonialService _testimonialService;
+        private readonly IMapper _mapper;
 
-        public TestimonialController(ITestimonialService testimonialService)
+        public TestimonialController(ITestimonialService testimonialService, IMapper mapper)
         {
             _testimonialService = testimonialService;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public IActionResult AddTestimonial(Testimonial testimonial)
+        public IActionResult AddTestimonial(CreateTestimonialDto createTestimonial)
         {
-            _testimonialService.TInsert(testimonial);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Testimonial>(createTestimonial);
+            _testimonialService.TInsert(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateTestimonial(Testimonial testimonial)
+        public IActionResult UpdateTestimonial(UpdateTestimonialDto updateTestimonial)
         {
-            _testimonialService.TUpdate(testimonial);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var values = _mapper.Map<Testimonial>(updateTestimonial);
+            _testimonialService.TUpdate(values);
             return Ok();
         }
 
