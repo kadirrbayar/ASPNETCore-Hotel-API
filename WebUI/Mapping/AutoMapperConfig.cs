@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using EntityLayer.Concrete;
+using WebUI.Dtos.LoginDto;
+using WebUI.Dtos.RegisterDto;
 using WebUI.Dtos.RoomDto;
 using WebUI.Dtos.ServiceDto;
 using WebUI.Dtos.StaffDto;
@@ -32,6 +34,7 @@ namespace WebUI.Mapping
             CreateMap<UpdateSubscribeDto, Subscribe>().ReverseMap();
             CreateMap<SubscribeDto, Subscribe>().ReverseMap();
 
+            CreateMap<RegisterDto, DbUser>().ReverseMap();
         }
     }
 }
