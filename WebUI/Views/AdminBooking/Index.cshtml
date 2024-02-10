@@ -1,0 +1,70 @@
+﻿@model List<BookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+    string color = "";
+}
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Rezervasyon Listesi</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Rezervasyonlar</h4>
+                    <div class="table-responsive">
+                        <table class="table header-border table-hover verticle-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ad Soyad</th>
+                                    <th scope="col">Giriş Tarihi</th>
+                                    <th scope="col">Çıkış Tarihi</th>
+                                    <th scope="col">Durumu</th>
+                                    <th scope="col">İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model)
+                                {
+                                    if (item.Status == "Onaylandı")
+                                        color = "gradient-1";
+                                    if (item.Status == "İptal Edildi")
+                                        color = "gradient-2";
+                                    if (item.Status == "Bekleniyor")
+                                        color = "gradient-3";
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.Name</td>
+                                        <td>@(((DateTime)item.CheckIn).ToString("dd-MMM-yyyy"))</td>
+                                        <td>@(((DateTime)item.CheckOut).ToString("dd-MMM-yyyy"))</td>
+                                        <td>
+                                            <span class="label @color btn-rounded">@item.Status</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <a href="/AdminBooking/UpdateApprove/@item.Id" data-toggle="tooltip" data-placement="top" title="Onayla"><i class="fa fa-check color-muted m-r-5"></i> </a>
+                                                <a href="/AdminBooking/UpdateWaiting/@item.Id" data-toggle="tooltip" data-placement="top" title="Beklet"><i class="fa fa-clock-o color-muted m-r-5"></i> </a>
+                                                <a href="/AdminBooking/UpdateDecline/@item.Id" data-toggle="tooltip" data-placement="top" title="İptal Et"><i class="fa fa-close color-danger"></i></a>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-danger"></i></a>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Detaylar"><i class="fa fa-book color-danger"></i></a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

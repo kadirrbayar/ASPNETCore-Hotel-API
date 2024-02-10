@@ -20,5 +20,8 @@ namespace WebUI.Dtos.StaffDto
 
         [StringLength(100, ErrorMessage = "100 karakterden büyük olmamalıdır.")]
         public string? SocialMedia3 { get; set; }
+
+        [Required(ErrorMessage = "Görsel alanı boş geçilemez.")]
+        public string? Image { get; set; }
     }
 }

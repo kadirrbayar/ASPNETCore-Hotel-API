@@ -26,6 +26,16 @@ builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<ITutorialDal, EfTutorialDal>();
+builder.Services.AddScoped<ITutorialService, TutorialManager>();
+builder.Services.AddScoped<IBookingDal, EfBookingDal>();
+builder.Services.AddScoped<IBookingService, BookingManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IGuestDal, EfGuestDal>();
+builder.Services.AddScoped<IGuestService, GuestManager>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

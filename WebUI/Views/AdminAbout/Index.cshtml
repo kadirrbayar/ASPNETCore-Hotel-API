@@ -1,0 +1,55 @@
+﻿@model List<AboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Hakkımızda Bilgisi</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>Hakkımızda Bilgisi Güncelleme</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Başlık1</th>
+                                    <th>Başlık2</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.Id</th>
+                                        <td>@item.Title1</td>
+                                        <td>@item.Title2</td>
+                                        <td>
+                                            <span>
+                                                <a href="/AdminAbout/EditAbout/@item.Id" data-toggle="tooltip" data-placement="top" title="Düzenle"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

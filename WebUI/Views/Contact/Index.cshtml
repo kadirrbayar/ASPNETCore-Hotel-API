@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_head")
+<body>
+    @await Component.InvokeAsync("_spinner")
+    @await Component.InvokeAsync("_navbar")
+    @await Component.InvokeAsync("_contactCover")
+    @await Html.PartialAsync("SendMessage")
+    @await Html.PartialAsync("/Views/Default/SubscribeResult.cshtml")
+    @await Component.InvokeAsync("_footer")
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    @await Component.InvokeAsync("_script")
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_head")
+<body>
+        @await Component.InvokeAsync("_spinner")
+        @await Component.InvokeAsync("_navbar")
+        @await Component.InvokeAsync("_slide")
+        @await Component.InvokeAsync("_about")
+        @await Component.InvokeAsync("_rooms")
+        @await Component.InvokeAsync("_tutorial")
+        @await Component.InvokeAsync("_services")
+        @await Component.InvokeAsync("_testimonials")
+        @await Component.InvokeAsync("_teams")
+        @await Html.PartialAsync("SubscribeResult")
+        @await Component.InvokeAsync("_footer")
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        @await Component.InvokeAsync("_script")
+</body>
+</html>

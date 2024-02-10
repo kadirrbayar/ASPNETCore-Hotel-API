@@ -1,0 +1,68 @@
+﻿@model UpdateRoomDto
+@{
+    ViewData["Title"] = "EditRoom";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Oda Düzenleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Oda Bilgisi Düzenleme Paneli</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <br />
+                            <label>Oda Numarası</label>
+                            <input type="number" asp-for="RoomNumber" class="form-control">
+                            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                            <br />
+                            <label>Fiyat Bilgisi</label>
+                            <input type="number" asp-for="Price" class="form-control">
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                            <br />
+                            <label>Başlık</label>
+                            <input type="text" asp-for="Title" class="form-control">
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                            <br />
+                            <label>Banyo Sayısı</label>
+                            <input type="number" asp-for="BathCount" class="form-control">
+                            <span asp-validation-for="BathCount" class="text-danger"></span>
+                            <br />
+                            <label>Yatak Sayısı</label>
+                            <input type="number" asp-for="BedCount" class="form-control">
+                            <span asp-validation-for="BedCount" class="text-danger"></span>
+                            <br />
+                            <label>Wifi</label>
+                            <input type="text" asp-for="Wifi" class="form-control">
+                            <span asp-validation-for="Wifi" class="text-danger"></span>
+                            <br />
+                            <label>Görsel Url</label>
+                            <input type="text" asp-for="RoomCoverImage" class="form-control">
+                            <span asp-validation-for="RoomCoverImage" class="text-danger"></span>
+                            <br />
+                            <label>Açıklama</label>
+                            <textarea type="text" asp-for="Description" class="form-control" style="height: 100px"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Güncelle</button>
+                            <a class="btn btn-outline-dark" href="/AdminRoom/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,46 @@
+﻿@model CreateGuestDto
+@{
+    ViewData["Title"] = "AddGuest";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Misafir Ekleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yeni Misafir Ekleme Paneli</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <br />
+                            <label>Adı</label>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Adı">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <br />
+                            <label>Soyadı</label>
+                            <input type="text" asp-for="SurName" class="form-control" placeholder="Soyadı">
+                            <span asp-validation-for="SurName" class="text-danger"></span>
+                            <br />
+                            <label>Şehir</label>
+                            <input type="text" asp-for="City" class="form-control" placeholder="Şehir">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Ekle</button>
+                            <a class="btn btn-outline-dark" href="/AdminGuest/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

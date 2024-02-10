@@ -1,0 +1,58 @@
+﻿@model List<GuestDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Misafirlerimiz</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>Misafirler</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>Şehir</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.Id</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.SurName</td>
+                                        <td>@item.City</td>
+                                        <td>
+                                            <span><a href="/AdminGuest/EditGuest/@item.Id" data-toggle="tooltip" data-placement="top" title="Düzenle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/AdminGuest/DeleteGuest/@item.Id" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="/AdminGuest/AddGuest/" class="btn btn-outline-info">Yeni Misafir Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
