@@ -1,0 +1,50 @@
+﻿@model SendMessageDto
+@{
+    ViewData["Title"] = "SendboxMessageDetails";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Giden Mesaj Detayları</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Giden Mesaj Detayları</h4>
+                    @await Component.InvokeAsync("_contactLeftMenu")
+                    <div class="email-right-box">
+                        <div class="read-content">
+                            <div class="media pt-1">
+                                <div class="media-body">
+                                    <h5 class="m-b-3">Alıcı Adı: <span class="m-b-3 text-info">@Model.ReceiverName</span></h5>
+                                    <p class="m-b-2">@(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="media mb-4 mt-1">
+                                <div class="media-body">
+                                    <h4 class="m-0">Konu: <span class="m-0 text-info">@Model.Subject</span></h4><small class="text-muted">Alıcı Mail: @Model.ReceiverMail</small>
+                                </div>
+                            </div>
+                            <p>
+                                @Model.Message
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <a class="btn btn-danger w-md m-b-30" href="/AdminContact/Sendbox/">İptal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

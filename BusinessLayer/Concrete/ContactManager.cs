@@ -33,9 +33,19 @@ namespace BusinessLayer.Concrete
            return _contactDal.GetList();
         }
 
+        public int TInboxCount()
+        {
+            return _contactDal.InboxCount();
+        }
+
         public void TInsert(Contact item)
         {
             _contactDal.Insert(item);
+        }
+
+        public int TSendBoxCount()
+        {
+            return _contactDal.SendBoxCount();
         }
 
         public void TUpdate(Contact item)

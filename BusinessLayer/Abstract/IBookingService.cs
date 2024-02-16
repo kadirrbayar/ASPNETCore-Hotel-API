@@ -12,5 +12,7 @@ namespace BusinessLayer.Abstract
         void TUpdateBookingApprove(int id);
         void TUpdateBookingDecline(int id);
         void TUpdateBookingWaiting(int id);
+        int TBookingCount();
+        List<Booking> TLast6Booking();
     }
 }

@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
+        public int TBookingCount()
+        {
+            return _bookingDal.BookingCount();
+        }
+
         public void TDelete(Booking item)
         {
             _bookingDal.Delete(item);
@@ -36,6 +41,11 @@ namespace BusinessLayer.Concrete
         public void TInsert(Booking item)
         {
             _bookingDal.Insert(item);
+        }
+
+        public List<Booking> TLast6Booking()
+        {
+            return _bookingDal.Last6Booking();
         }
 
         public void TUpdate(Booking item)

@@ -3,10 +3,13 @@ using EntityLayer.Concrete;
 using WebUI.Dtos.AboutDto;
 using WebUI.Dtos.BookingDto;
 using WebUI.Dtos.ContactDto;
+using WebUI.Dtos.DbUserDto;
 using WebUI.Dtos.GuestDto;
 using WebUI.Dtos.LoginDto;
+using WebUI.Dtos.MessageCategoryDto;
 using WebUI.Dtos.RegisterDto;
 using WebUI.Dtos.RoomDto;
+using WebUI.Dtos.SendMessageDto;
 using WebUI.Dtos.ServiceDto;
 using WebUI.Dtos.StaffDto;
 using WebUI.Dtos.SubscribeDto;
@@ -22,6 +25,7 @@ namespace WebUI.Mapping
             CreateMap<CreateServiceDto, Service>().ReverseMap();
             CreateMap<UpdateServiceDto, Service>().ReverseMap();
             CreateMap<ServiceDto, Service>().ReverseMap();
+            CreateMap<Last4StaffDto, Service>().ReverseMap();
             
             CreateMap<CreateTestimonialDto, Testimonial>().ReverseMap();
             CreateMap<UpdateTestimonialDto, Testimonial>().ReverseMap();
@@ -51,13 +55,23 @@ namespace WebUI.Mapping
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
             CreateMap<UpdateBookingDto, Booking>().ReverseMap();
             CreateMap<BookingDto, Booking>().ReverseMap();
+            CreateMap<Last6BookingDto, Booking>().ReverseMap();
             
             CreateMap<CreateContactDto, Contact>().ReverseMap();
             CreateMap<ContactDto, Contact>().ReverseMap();
+            
+            CreateMap<CreateSendMessageDto, SendMessage>().ReverseMap();
+            CreateMap<SendMessageDto, SendMessage>().ReverseMap();
 
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<UpdateGuestDto, Guest>().ReverseMap();
             CreateMap<GuestDto, Guest>().ReverseMap();
+
+            CreateMap<DbUserDto, DbUser>().ReverseMap();
+            
+            CreateMap<CreateMessageCategoryDto, MessageCategory>().ReverseMap();
+            CreateMap<UpdateMessageCategoryDto, MessageCategory>().ReverseMap();
+            CreateMap<MessageCategoryDto, MessageCategory>().ReverseMap();
         }
     }
 }

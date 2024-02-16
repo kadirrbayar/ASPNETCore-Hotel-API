@@ -3,7 +3,9 @@ using DtoLayer.Dtos.AboutDto;
 using DtoLayer.Dtos.BookingDto;
 using DtoLayer.Dtos.ContactDto;
 using DtoLayer.Dtos.GuestDto;
+using DtoLayer.Dtos.MessageCategoryDto;
 using DtoLayer.Dtos.RoomDto;
+using DtoLayer.Dtos.SendMessageDto;
 using DtoLayer.Dtos.ServiceDto;
 using DtoLayer.Dtos.StaffDto;
 using DtoLayer.Dtos.SubscribeDto;
@@ -41,8 +43,12 @@ namespace WebAPI.Mapping
 
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
             CreateMap<UpdateBookingDto, Booking>().ReverseMap();
+            
+            CreateMap<CreateMessageCategoryDto, MessageCategory>().ReverseMap();
+            CreateMap<UpdateMessageCategoryDto, MessageCategory>().ReverseMap();
 
             CreateMap<CreateContactDto, Contact>().ReverseMap();
+            CreateMap<CreateSendMessageDto, SendMessage>().ReverseMap();
 
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<UpdateGuestDto, Guest>().ReverseMap();

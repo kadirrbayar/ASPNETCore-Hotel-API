@@ -16,5 +16,21 @@ namespace DataAccessLayer.EntityFramework
         {
             
         }
+
+        public List<Staff> Last4Staff()
+        {
+            var context = new Context();
+            var values = context.Staffs.OrderByDescending(x => x.Id).Take(4).ToList();
+            return values;
+        }
+
+        public int StaffCount()
+        {
+            using(var db = new Context())
+            {
+                var values = db.Staffs.Count();
+                return values;
+            }
+        }
     }
 }

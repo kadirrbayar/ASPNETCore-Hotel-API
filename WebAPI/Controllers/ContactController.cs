@@ -51,5 +51,17 @@ namespace WebAPI.Controllers
             var find = _contactService.TGetId(id);
             return Ok(find);
         }
+
+        [HttpGet("InboxCount")]
+        public IActionResult InboxCount()
+        {
+            return Ok(_contactService.TInboxCount());
+        }
+        
+        [HttpGet("SendBoxCount")]
+        public IActionResult SendBoxCount()
+        {
+            return Ok(_contactService.TSendBoxCount());
+        }
     }
 }

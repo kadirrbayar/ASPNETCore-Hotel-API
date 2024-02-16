@@ -4,10 +4,8 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 @await Html.PartialAsync("/Views/AdminLayout/HeadPartial.cshtml")
-
 <body>
     @await Html.PartialAsync("/Views/AdminLayout/PreloaderPartial.cshtml")
     <div id="main-wrapper">
@@ -19,10 +17,6 @@
         </div>
         @await Html.PartialAsync("/Views/AdminLayout/FooterPartial.cshtml")
     </div>
-    <script src="~/plugins/common/common.min.js"></script>
-    <script src="~/js/custom.min.js"></script>
-    <script src="~/js/settings.js"></script>
-    <script src="~/js/gleek.js"></script>
-    <script src="~/js/styleSwitcher.js"></script>
+    @await Html.PartialAsync("/Views/AdminLayout/ScriptPartial.cshtml")
 </body>
 </html>

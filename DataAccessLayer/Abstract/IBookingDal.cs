@@ -12,5 +12,7 @@ namespace DataAccessLayer.Abstract
         void UpdateBookingApprove(int id);
         void UpdateBookingDecline(int id);
         void UpdateBookingWaiting(int id);
+        int BookingCount();
+        List<Booking> Last6Booking(); 
     }
 }

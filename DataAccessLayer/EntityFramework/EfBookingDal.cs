@@ -16,6 +16,22 @@ namespace DataAccessLayer.EntityFramework
         {
         }
 
+        public int BookingCount()
+        {
+            using (var context = new Context())
+            {
+                var values = context.Bookings.Count();
+                return values;
+            }
+        }
+
+        public List<Booking> Last6Booking()
+        {
+            var context = new Context();
+            var values = context.Bookings.OrderByDescending(x => x.Id).ToList();
+            return values;
+        }
+
         public void UpdateBookingApprove(int id)
         {
             using (var db = new Context())

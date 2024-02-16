@@ -14,6 +14,25 @@ namespace DataAccessLayer.EntityFramework
     {
         public EfContactDal(Context context) : base(context)
         {
+
+        }
+
+        public int InboxCount()
+        {
+            using (var context = new Context())
+            {
+                int values = context.Contacts.Count();
+                return values;
+            }
+        }
+
+        public int SendBoxCount()
+        {
+            using (var context = new Context())
+            {
+                int values = context.SendMessages.Count();
+                return values;
+            }
         }
     }
 }

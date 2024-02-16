@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IStaffDal : IGenericDal<Staff>
     {
+        int StaffCount();
+        List<Staff> Last4Staff();
     }
 }

@@ -1,10 +1,12 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Dtos.LoginDto;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<DbUser> _signInManager;
@@ -28,7 +30,7 @@ namespace WebUI.Controllers
                 var result = await _signInManager.PasswordSignInAsync(loginDto.Username, loginDto.Password,false,false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Staff");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 return View();
                    

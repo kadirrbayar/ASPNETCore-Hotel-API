@@ -16,5 +16,13 @@ namespace DataAccessLayer.EntityFramework
         {
             
         }
+
+        public int RoomCount()
+        {
+            using (var db = new Context())
+            {
+                return db.Rooms.Count();
+            }
+        }
     }
 }

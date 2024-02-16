@@ -39,6 +39,16 @@ namespace BusinessLayer.Concrete
             _staffDal.Insert(item);
         }
 
+        public List<Staff> TLast4Staff()
+        {
+            return _staffDal.Last4Staff();
+        }
+
+        public int TStaffCount()
+        {
+            return _staffDal.StaffCount();
+        }
+
         public void TUpdate(Staff item)
         {
             _staffDal.Update(item);

@@ -5,8 +5,10 @@
                 <div class="bg-white rounded text-center p-5">
                     <h4 class="mb-4">Mail Bültenine <span class="text-primary text-uppercase">Kaydolun</span></h4>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Mail Adresiniz">
-                        <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Kaydet</button>
+                        <form method="post" asp-action="SubscribeResult" asp-controller="Default">
+                            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" name="Mail" placeholder="Mail Adresiniz">
+                            <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Kaydet</button>
+                        </form>
                     </div>
                 </div>
             </div>
