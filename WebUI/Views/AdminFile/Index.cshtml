@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Dosya Yükleme İşlemleri</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Dosya Yükleme</h4>
+                    <div class="basic-form">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" class="form-control" name="file" />
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Yükle</button>
+                            <a class="btn btn-outline-dark" href="/Dashboard/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

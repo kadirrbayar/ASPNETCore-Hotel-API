@@ -32,6 +32,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using WebUI.ValidationRules.MessageCategoryValidation;
 using WebUI.Dtos.MessageCategoryDto;
+using WebUI.Dtos.RoleDto;
+using WebUI.ValidationRules.RoleValidation;
+using WebUI.Dtos.DbUserDto;
+using WebUI.ValidationRules.DbUserValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -75,6 +79,9 @@ builder.Services.AddTransient<IValidator<CreateTutorialDto>, CreateTutorialValid
 builder.Services.AddTransient<IValidator<UpdateTutorialDto>, UpdateTutorialValidator>();
 builder.Services.AddTransient<IValidator<CreateMessageCategoryDto>, CreateMessageCategoryValidator>();
 builder.Services.AddTransient<IValidator<UpdateMessageCategoryDto>, UpdateMessageCategoryValidator>();
+builder.Services.AddTransient<IValidator<CreateRoleDto>, CreateRoleValidator>();
+builder.Services.AddTransient<IValidator<UpdateRoleDto>, UpdateRoleValidator>();
+builder.Services.AddTransient<IValidator<UpdateDbUserDto>, UpdateDbUserValidator>();
 
 builder.Services.AddControllersWithViews().AddFluentValidation();
 

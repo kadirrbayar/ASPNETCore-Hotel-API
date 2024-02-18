@@ -8,6 +8,7 @@ using WebUI.Dtos.GuestDto;
 using WebUI.Dtos.LoginDto;
 using WebUI.Dtos.MessageCategoryDto;
 using WebUI.Dtos.RegisterDto;
+using WebUI.Dtos.RoleDto;
 using WebUI.Dtos.RoomDto;
 using WebUI.Dtos.SendMessageDto;
 using WebUI.Dtos.ServiceDto;
@@ -72,6 +73,11 @@ namespace WebUI.Mapping
             CreateMap<CreateMessageCategoryDto, MessageCategory>().ReverseMap();
             CreateMap<UpdateMessageCategoryDto, MessageCategory>().ReverseMap();
             CreateMap<MessageCategoryDto, MessageCategory>().ReverseMap();
+
+            CreateMap<CreateRoleDto, DbRole>().ReverseMap();
+            CreateMap<UpdateRoleDto, DbRole>().ReverseMap();
+            CreateMap<RoleAssignDto, DbRole>().ReverseMap();
+            CreateMap<UpdateDbUserDto, DbUser>().ReverseMap();
         }
     }
 }

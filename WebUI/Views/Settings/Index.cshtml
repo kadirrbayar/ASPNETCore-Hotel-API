@@ -1,0 +1,70 @@
+﻿@model UpdateDbUserDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Profil Düzenleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Kullanıcı Bilgisi Düzenleme Paneli</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <br />
+                            <label>Adı</label>
+                            <input type="text" asp-for="Name" class="form-control">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <br />
+                            <label>Soyadı</label>
+                            <input type="text" asp-for="Surname" class="form-control">
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                            <br />
+                            <label>Mail Adresi</label>
+                            <input type="email" asp-for="Mail" class="form-control">
+                            <span asp-validation-for="Mail" class="text-danger"></span>
+                            <br />
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" asp-for="Username" class="form-control" readonly>
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                            <br />
+                            <label>Şehir Bilgisi</label>
+                            <input type="text" asp-for="City" class="form-control">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                            <br />
+                            <label>Mevcut Şifre</label>
+                            <input type="text" asp-for="CurrentPassword" class="form-control" placeholder="Şifrenizi değiştirmek istemiyorsanız boş bırakın.">
+                            <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+                            <br />
+                            <label>Yeni Şifre</label>
+                            <input type="text" asp-for="Password" class="form-control">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <br />
+                            <label>Yeni Şifre Tekrar</label>
+                            <input type="text" asp-for="PasswordConfirm" class="form-control">
+                            <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Güncelle</button>
+                            <a class="btn btn-outline-dark" href="/Dashboard/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

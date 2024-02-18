@@ -1,0 +1,39 @@
+﻿@model CreateRoleDto
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active"><a href="#">Rol Ekleme Paneli</a></li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yeni Rol Ekleme</h4>
+                    <div class="basic-form">
+                        <form method="post">
+                            <br />
+                            <label>Rol Adı</label>
+                            <input type="text" asp-for="RoleName" class="form-control" placeholder="Rol Adı">
+                            <span asp-validation-for="RoleName" class="text-danger"></span>
+                            <br />
+                            <button type="submit" class="btn btn-outline-info">Ekle</button>
+                            <a class="btn btn-outline-dark" href="/Role/Index/">İptal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
